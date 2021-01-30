@@ -7,7 +7,7 @@ const rocketImages = {
   'Falcon 9': 'falcon-9',
   'Falcon Heavy': 'falcon-heavy',
   'Starship': 'starship'
-}
+};
 
 const Features = ({name,
     height,
