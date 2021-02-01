@@ -4,13 +4,14 @@ import Main from '../Main/Main'
 import FetchData from '../../service/FetchData'
 import './calendar.css'
 
+const fetchData = new FetchData();
+
 const Calendar = () => {
-  const fetchData = new FetchData();
   const [data, setData] = useState([]);
 
   useEffect(() => {
     fetchData.getLaunches()
-      .then(launches => setData(launches))
+      .then(launches => setData(state => [...launches]))
   }, []);
 
   return (
