@@ -7,4 +7,11 @@ Technologies which have been used for the website :
  - HTML
 
 
+To deploy the updates:
+
+```
+yarn build
+surge build spacex.anastasiastarodubtseva.com
+```
+
  [View live demo](https://spacex.anastasiastarodubtseva.com/)
