@@ -56,17 +56,16 @@ class App extends React.Component {
         <Route exact path='/'>
           {this.state.company && <Home company={this.state.company} />}
         </Route>
+
         <Route path='/rocket'>
           <Main rocket={this.state.rocket} />
           {this.state.rocketFeatures &&
             <Features {...this.state.rocketFeatures }/>}
         </Route>
-        <Route path='/calendar'>
-          <Calendar />
-        </Route>
-        <Route path='/details'>
-          <Details />
-        </Route>
+
+        <Route path='/calendar' component={Calendar} />
+        <Route path='/details' component={Details} />
+
         {this.state.company && <Footer {...this.state.company} />}
       </BrowserRouter>
     );
