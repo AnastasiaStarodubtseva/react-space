@@ -54,12 +54,15 @@ class App extends React.Component {
         <Header rockets={this.state.rockets} changeRocket={this.changeRocket} />
         <Route exact
           path='/'
-          render={() => this.state.company && <Home company={this.state.company} />} />
+          render={(props) => {
+            return this.state.company &&
+              <Home company={this.state.company} />
+          }} />
 
-        <Route path='/rocket'>
-          {this.state.rocketFeatures &&
-            <Features {...this.state.rocketFeatures }/>}
-        </Route>
+        <Route
+          path='/rocket/:rocket'
+          render={() => this.state.rocketFeatures &&
+            <Features {...this.state.rocketFeatures } />} />
 
         <Route path='/calendar' component={Calendar} />
         <Route path='/details/:id' component={Details} />
